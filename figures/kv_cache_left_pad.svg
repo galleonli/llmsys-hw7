@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 250" width="820" height="250" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <rect width="820" height="250" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Phase headers -->
+  <rect x="162" y="18" width="380" height="22" rx="4" fill="#dbeafe"/>
+  <text x="352" y="33" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e40af">Prefill  [0 .. P−1]</text>
+
+  <rect x="550" y="18" width="228" height="22" rx="4" fill="#dcfce7"/>
+  <text x="664" y="33" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">Decode  [P .. S−1]</text>
+
+  <!-- Slot index headers -->
+  <g font-size="11" font-weight="600" fill="#475569" text-anchor="middle">
+    <text x="200" y="56">slot 0</text>
+    <text x="276" y="56">slot 1</text>
+    <text x="352" y="56">slot 2</text>
+    <text x="428" y="56">slot 3</text>
+    <text x="504" y="56">slot 4</text>
+    <text x="588" y="56">slot 5</text>
+    <text x="664" y="56">slot 6</text>
+    <text x="740" y="56">slot 7</text>
+  </g>
+
+  <!-- Divider between prefill and decode -->
+  <line x1="546" y1="16" x2="546" y2="212" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- Sequence 0 (length 5) -->
+  <text x="20" y="86" font-size="12" font-weight="700" fill="#0f172a">Seq 0 (L = 5)</text>
+  <text x="20" y="104" font-size="10.5" fill="#64748b">RoPE pos / valid</text>
+
+  <g stroke-width="1.3">
+    <rect x="164" y="66" width="72" height="52" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+    <rect x="240" y="66" width="72" height="52" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+    <rect x="316" y="66" width="72" height="52" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+    <rect x="392" y="66" width="72" height="52" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+    <rect x="468" y="66" width="72" height="52" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+    <rect x="552" y="66" width="72" height="52" rx="5" fill="#f0fdf4" stroke="#22c55e"/>
+    <rect x="628" y="66" width="72" height="52" rx="5" fill="#f0fdf4" stroke="#22c55e"/>
+    <rect x="704" y="66" width="72" height="52" rx="5" fill="#f1f5f9" stroke="#cbd5e1" stroke-dasharray="4,3"/>
+  </g>
+  <g text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">
+    <text x="200" y="88">t₀</text><text x="276" y="88">t₁</text><text x="352" y="88">t₂</text><text x="428" y="88">t₃</text><text x="504" y="88">t₄</text>
+    <text x="588" y="88" fill="#15803d">d₀</text><text x="664" y="88" fill="#15803d">d₁</text><text x="740" y="88" fill="#94a3b8">empty</text>
+  </g>
+  <g text-anchor="middle" font-size="10" fill="#475569">
+    <text x="200" y="108">pos=0 · T</text><text x="276" y="108">pos=1 · T</text><text x="352" y="108">pos=2 · T</text><text x="428" y="108">pos=3 · T</text><text x="504" y="108">pos=4 · T</text>
+    <text x="588" y="108">pos=5 · T</text><text x="664" y="108">pos=6 · T</text><text x="740" y="108" fill="#94a3b8">— · F</text>
+  </g>
+
+  <!-- Sequence 1 (length 3, left-padded) -->
+  <text x="20" y="162" font-size="12" font-weight="700" fill="#0f172a">Seq 1 (L = 3)</text>
+  <text x="20" y="180" font-size="10.5" fill="#64748b">RoPE pos / valid</text>
+
+  <g stroke-width="1.3">
+    <rect x="164" y="142" width="72" height="52" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-dasharray="4,3"/>
+    <rect x="240" y="142" width="72" height="52" rx="5" fill="#fef2f2" stroke="#fca5a5" stroke-dasharray="4,3"/>
+    <rect x="316" y="142" width="72" height="52" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+    <rect x="392" y="142" width="72" height="52" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+    <rect x="468" y="142" width="72" height="52" rx="5" fill="#eff6ff" stroke="#3b82f6"/>
+    <rect x="552" y="142" width="72" height="52" rx="5" fill="#f0fdf4" stroke="#22c55e"/>
+    <rect x="628" y="142" width="72" height="52" rx="5" fill="#f0fdf4" stroke="#22c55e"/>
+    <rect x="704" y="142" width="72" height="52" rx="5" fill="#f1f5f9" stroke="#cbd5e1" stroke-dasharray="4,3"/>
+  </g>
+  <g text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">
+    <text x="200" y="164" fill="#dc2626">PAD</text><text x="276" y="164" fill="#dc2626">PAD</text>
+    <text x="352" y="164">t₀</text><text x="428" y="164">t₁</text><text x="504" y="164">t₂</text>
+    <text x="588" y="164" fill="#15803d">d₀</text><text x="664" y="164" fill="#15803d">d₁</text><text x="740" y="164" fill="#94a3b8">empty</text>
+  </g>
+  <g text-anchor="middle" font-size="10" fill="#475569">
+    <text x="200" y="184" fill="#dc2626">pos=0 · F</text><text x="276" y="184" fill="#dc2626">pos=0 · F</text>
+    <text x="352" y="184">pos=0 · T</text><text x="428" y="184">pos=1 · T</text><text x="504" y="184">pos=2 · T</text>
+    <text x="588" y="184">pos=3 · T</text><text x="664" y="184">pos=4 · T</text><text x="740" y="184" fill="#94a3b8">— · F</text>
+  </g>
+
+  <!-- Shared cache_index callout -->
+  <path d="M 588 224 L 588 198" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arrow2)"/>
+  <text x="588" y="239" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">cache_index = P + step</text>
+</svg>

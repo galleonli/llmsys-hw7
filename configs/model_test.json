@@ -1,0 +1,11 @@
+{
+  "vocab_size": 64,
+  "n_layers": 2,
+  "d_model": 32,
+  "n_heads": 4,
+  "n_kv_heads": 2,
+  "d_ff": 64,
+  "rms_norm_eps": 1e-6,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": true
+}
