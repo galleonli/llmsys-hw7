@@ -1,4 +1,4 @@
-"""Assignment 1.4: Transformer Block, Prefill, and Single-Step Decode."""
+"""Assignment 4: Transformer Block, Prefill, and Single-Step Decode."""
 
 from __future__ import annotations
 
@@ -39,9 +39,9 @@ def transformer_block(
     Returns:
         (out, new_layer_cache) where `out` has shape [B, T, d_model].
     """
-    # BEGIN Assignment 1.4
-    raise NotImplementedError("Implement Assignment 1.4")
-    # END Assignment 1.4
+    # BEGIN Assignment 4
+    raise NotImplementedError("Implement Assignment 4")
+    # END Assignment 4
 
 
 def prefill(
@@ -68,10 +68,15 @@ def prefill(
         cache: Populated ModelKVCache with prompts written to slots [0, P).
         cache_valid_mask: Boolean mask of shape [B, max_seq_len].
         next_positions: True RoPE position for the first decode token, shape [B, 1] (int32).
+
+    Constraints:
+        - Support left-padded prompts: real tokens of sequence b receive RoPE positions
+          0, 1, ..., L_b - 1 (pad tokens receive 0), and `next_positions[b, 0] == L_b`.
+        - Support both tied (`embed_tokens.T`) and untied (`lm_head`) output projections.
     """
-    # BEGIN Assignment 1.4
-    raise NotImplementedError("Implement Assignment 1.4")
-    # END Assignment 1.4
+    # BEGIN Assignment 4
+    raise NotImplementedError("Implement Assignment 4")
+    # END Assignment 4
 
 
 def decode_step(
@@ -101,7 +106,11 @@ def decode_step(
         logits: Next-token logits of shape [B, 1, vocab_size].
         new_cache: Updated ModelKVCache.
         new_cache_valid_mask: Updated boolean mask of shape [B, max_seq_len].
+
+    Constraints:
+        Marks column `cache_index` valid, writes single-token K/V at `cache_index`,
+        and must trace only once under `@jax.jit` across consecutive decode steps.
     """
-    # BEGIN Assignment 1.4
-    raise NotImplementedError("Implement Assignment 1.4")
-    # END Assignment 1.4
+    # BEGIN Assignment 4
+    raise NotImplementedError("Implement Assignment 4")
+    # END Assignment 4

@@ -1,4 +1,4 @@
-"""Assignment 1.3: Grouped-Query Attention & Causal/Padding Attention Mask."""
+"""Assignment 3: Grouped-Query Attention & Causal/Padding Attention Mask."""
 
 from __future__ import annotations
 
@@ -21,11 +21,12 @@ def make_attention_mask(
 
     Returns:
         Boolean attention mask of shape [B, 1, query_len, max_seq_len] where
-        True means the query is allowed to attend to the key slot.
+        entry (b, 0, t, s) is True iff `cache_valid_mask[b, s]` is True and
+        `s <= cache_index + t`.
     """
-    # BEGIN Assignment 1.3
-    raise NotImplementedError("Implement Assignment 1.3")
-    # END Assignment 1.3
+    # BEGIN Assignment 3
+    raise NotImplementedError("Implement Assignment 3")
+    # END Assignment 3
 
 
 def gqa_attention(
@@ -44,7 +45,14 @@ def gqa_attention(
 
     Returns:
         Attention output of shape [B, T, n_heads, head_dim] with dtype `q.dtype`.
+
+    Constraints:
+        - Group query heads so each KV head serves `n_heads // n_kv_heads` query heads
+          without copying `k_cache` or `v_cache`.
+        - Compute attention scores and softmax in float32.
+        - Masked-out slots must have zero effect on outputs, and all-masked query rows
+          (from left-padding) must produce finite values (no NaN/Inf).
     """
-    # BEGIN Assignment 1.3
-    raise NotImplementedError("Implement Assignment 1.3")
-    # END Assignment 1.3
+    # BEGIN Assignment 3
+    raise NotImplementedError("Implement Assignment 3")
+    # END Assignment 3

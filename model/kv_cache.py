@@ -1,4 +1,4 @@
-"""Assignment 1.2: Static-Shape KV Cache Initialization & Functional Update."""
+"""Assignment 2: Static-Shape KV Cache Initialization & Functional Update."""
 
 from __future__ import annotations
 
@@ -24,11 +24,11 @@ def init_kv_cache(
 
     Returns:
         Tuple of `config.n_layers` LayerKVCache entries, each with `k` and `v`
-        of shape [B, max_seq_len, n_kv_heads, head_dim].
+        zero-initialized to shape [B, max_seq_len, n_kv_heads, head_dim] and `dtype`.
     """
-    # BEGIN Assignment 1.2
-    raise NotImplementedError("Implement Assignment 1.2")
-    # END Assignment 1.2
+    # BEGIN Assignment 2
+    raise NotImplementedError("Implement Assignment 2")
+    # END Assignment 2
 
 
 def update_kv_cache(
@@ -39,10 +39,6 @@ def update_kv_cache(
 ) -> LayerKVCache:
     """Write new K/V tensors into a static-shape layer cache at `cache_index`.
 
-    Uses `jax.lax.dynamic_update_slice` so XLA compiles a single static-shape
-    program for both prefill (`T = P`, `cache_index = 0`) and decode
-    (`T = 1`, `cache_index = P + step`) without recompilation.
-
     Args:
         layer_cache: Existing LayerKVCache with k, v of shape [B, S, n_kv_heads, head_dim].
         k_new: New keys of shape [B, T, n_kv_heads, head_dim].
@@ -51,7 +47,13 @@ def update_kv_cache(
 
     Returns:
         Updated LayerKVCache with the same static shapes.
+
+    Constraints:
+        - Functionally write into slots [cache_index, cache_index + T) without mutating
+          the input cache, casting `k_new`/`v_new` to match the cache dtype.
+        - Must trace only once under `@jax.jit` across varying `cache_index` values
+          (e.g., via `jax.lax.dynamic_update_slice`).
     """
-    # BEGIN Assignment 1.2
-    raise NotImplementedError("Implement Assignment 1.2")
-    # END Assignment 1.2
+    # BEGIN Assignment 2
+    raise NotImplementedError("Implement Assignment 2")
+    # END Assignment 2

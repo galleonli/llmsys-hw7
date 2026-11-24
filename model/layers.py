@@ -1,4 +1,4 @@
-"""Assignment 1.1: Core LLaMA Building Blocks (RMSNorm, RoPE, SwiGLU)."""
+"""Assignment 1: Core LLaMA Building Blocks (RMSNorm, RoPE, SwiGLU)."""
 
 from __future__ import annotations
 
@@ -33,10 +33,13 @@ def rms_norm(x: jax.Array, weight: jax.Array, eps: float = 1e-6) -> jax.Array:
 
     Returns:
         Normalized activations of shape [..., d_model] with the same dtype as `x`.
+
+    Constraints:
+        Accumulate normalization in float32 and cast back to `x.dtype` (preserving bfloat16).
     """
-    # BEGIN Assignment 1.1
-    raise NotImplementedError("Implement Assignment 1.1")
-    # END Assignment 1.1
+    # BEGIN Assignment 1
+    raise NotImplementedError("Implement Assignment 1")
+    # END Assignment 1
 
 
 def apply_rope(
@@ -49,16 +52,20 @@ def apply_rope(
 
     Args:
         x: Tensor of shape [B, T, H, head_dim].
-        positions: Integer token positions of shape [B, T].
-        cos: Precomputed cosines of shape [max_seq_len, head_dim // 2].
-        sin: Precomputed sines of shape [max_seq_len, head_dim // 2].
+        positions: Integer token positions of shape [B, T] (int32).
+        cos: Precomputed cosines of shape [max_seq_len, head_dim // 2] (float32).
+        sin: Precomputed sines of shape [max_seq_len, head_dim // 2] (float32).
 
     Returns:
         Rotated tensor of shape [B, T, H, head_dim] with the same dtype as `x`.
+
+    Constraints:
+        Compute rotation in float32; preserve `x.dtype`, vector norms, and
+        relative-position inner products.
     """
-    # BEGIN Assignment 1.1
-    raise NotImplementedError("Implement Assignment 1.1")
-    # END Assignment 1.1
+    # BEGIN Assignment 1
+    raise NotImplementedError("Implement Assignment 1")
+    # END Assignment 1
 
 
 def swiglu_mlp(
@@ -78,6 +85,6 @@ def swiglu_mlp(
     Returns:
         Output activations of shape [B, T, d_model].
     """
-    # BEGIN Assignment 1.1
-    raise NotImplementedError("Implement Assignment 1.1")
-    # END Assignment 1.1
+    # BEGIN Assignment 1
+    raise NotImplementedError("Implement Assignment 1")
+    # END Assignment 1

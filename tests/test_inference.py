@@ -400,12 +400,12 @@ def run_roofline_benchmark(mod: ModuleType) -> None:
 
 
 SECTION_TESTS = {
-    "1.1": ("Assignment 1.1 (RMSNorm, RoPE, SwiGLU)", test_assignment_1_1, True),
-    "1.2": ("Assignment 1.2 (Static KV Cache & dynamic_update_slice)", test_assignment_1_2, True),
-    "1.3": ("Assignment 1.3 (Masking & Grouped-Query Attention)", test_assignment_1_3, True),
-    "1.4": ("Assignment 1.4 (Transformer Block, Prefill, Decode Step)", test_assignment_1_4, True),
-    "1.5": ("Assignment 1.5 (Sampling, Batched Variable-Length Generate)", test_assignment_1_5, True),
-    "perf": ("Performance    (TPU v5e KV-Cache JIT+scan >= 100x Speedup)", test_performance_kv_cache_speedup, False),
+    "1": ("Assignment 1 (RMSNorm, RoPE, SwiGLU)", test_assignment_1_1, True),
+    "2": ("Assignment 2 (Static KV Cache & dynamic_update_slice)", test_assignment_1_2, True),
+    "3": ("Assignment 3 (Masking & Grouped-Query Attention)", test_assignment_1_3, True),
+    "4": ("Assignment 4 (Transformer Block, Prefill, Decode Step)", test_assignment_1_4, True),
+    "5": ("Assignment 5 (Sampling, Batched Variable-Length Generate)", test_assignment_1_5, True),
+    "perf": ("Performance  (TPU v5e KV-Cache JIT+scan >= 100x Speedup)", test_performance_kv_cache_speedup, False),
 }
 
 
@@ -418,10 +418,11 @@ def _resolve_submission(submission: str | Path | ModuleType) -> tuple[ModuleType
 
 def run_section(
     submission: str | Path | ModuleType = DEFAULT_MODEL_PATH,
-    section: str = "1.1",
+    section: str | int = "1",
     data_path: str | Path | None = None,
 ) -> int:
-    """Run a single assignment section test (`"1.1"` .. `"1.5"` or `"perf"`) in-process."""
+    """Run a single assignment section test (`"1"` .. `"5"` or `"perf"`) in-process."""
+    section = str(section)
     if section not in SECTION_TESTS:
         raise ValueError(f"Unknown section {section!r}. Choose from {list(SECTION_TESTS)}")
 
