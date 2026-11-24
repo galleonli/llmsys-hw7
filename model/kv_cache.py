@@ -1,5 +1,3 @@
-"""Assignment 2: Static-Shape KV Cache Initialization & Functional Update."""
-
 from __future__ import annotations
 
 import jax
@@ -26,9 +24,9 @@ def init_kv_cache(
         Tuple of `config.n_layers` LayerKVCache entries, each with `k` and `v`
         zero-initialized to shape [B, max_seq_len, n_kv_heads, head_dim] and `dtype`.
     """
-    # BEGIN Assignment 2
-    raise NotImplementedError("Implement Assignment 2")
-    # END Assignment 2
+    # BEGIN Part 2.1
+    raise NotImplementedError("Implement Part 2.1")
+    # END Part 2.1
 
 
 def update_kv_cache(
@@ -54,6 +52,6 @@ def update_kv_cache(
         - Must trace only once under `@jax.jit` across varying `cache_index` values
           (e.g., via `jax.lax.dynamic_update_slice`).
     """
-    # BEGIN Assignment 2
-    raise NotImplementedError("Implement Assignment 2")
-    # END Assignment 2
+    # BEGIN Part 2.2
+    raise NotImplementedError("Implement Part 2.2")
+    # END Part 2.2

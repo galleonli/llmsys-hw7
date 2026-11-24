@@ -1,5 +1,3 @@
-"""Assignment 3: Grouped-Query Attention & Causal/Padding Attention Mask."""
-
 from __future__ import annotations
 
 import jax
@@ -24,9 +22,9 @@ def make_attention_mask(
         entry (b, 0, t, s) is True iff `cache_valid_mask[b, s]` is True and
         `s <= cache_index + t`.
     """
-    # BEGIN Assignment 3
-    raise NotImplementedError("Implement Assignment 3")
-    # END Assignment 3
+    # BEGIN Part 3.1
+    raise NotImplementedError("Implement Part 3.1")
+    # END Part 3.1
 
 
 def gqa_attention(
@@ -53,6 +51,6 @@ def gqa_attention(
         - Masked-out slots must have zero effect on outputs, and all-masked query rows
           (from left-padding) must produce finite values (no NaN/Inf).
     """
-    # BEGIN Assignment 3
-    raise NotImplementedError("Implement Assignment 3")
-    # END Assignment 3
+    # BEGIN Part 3.2
+    raise NotImplementedError("Implement Part 3.2")
+    # END Part 3.2

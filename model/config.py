@@ -1,5 +1,3 @@
-"""Model configuration and KV-cache PyTree definitions."""
-
 from __future__ import annotations
 
 import json

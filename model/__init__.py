@@ -1,5 +1,3 @@
-"""LLaMA-style pure-JAX inference package for CMU 11-868."""
-
 from .attention import gqa_attention, make_attention_mask
 from .config import LayerKVCache, ModelConfig, ModelKVCache
 from .generate import generate, sample_next_token

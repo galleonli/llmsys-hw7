@@ -1,5 +1,3 @@
-"""Assignment 1: Core LLaMA Building Blocks (RMSNorm, RoPE, SwiGLU)."""
-
 from __future__ import annotations
 
 import jax
@@ -37,9 +35,9 @@ def rms_norm(x: jax.Array, weight: jax.Array, eps: float = 1e-6) -> jax.Array:
     Constraints:
         Accumulate normalization in float32 and cast back to `x.dtype` (preserving bfloat16).
     """
-    # BEGIN Assignment 1
-    raise NotImplementedError("Implement Assignment 1")
-    # END Assignment 1
+    # BEGIN Part 1.1
+    raise NotImplementedError("Implement Part 1.1")
+    # END Part 1.1
 
 
 def apply_rope(
@@ -63,9 +61,9 @@ def apply_rope(
         Compute rotation in float32; preserve `x.dtype`, vector norms, and
         relative-position inner products.
     """
-    # BEGIN Assignment 1
-    raise NotImplementedError("Implement Assignment 1")
-    # END Assignment 1
+    # BEGIN Part 1.2
+    raise NotImplementedError("Implement Part 1.2")
+    # END Part 1.2
 
 
 def swiglu_mlp(
@@ -85,6 +83,6 @@ def swiglu_mlp(
     Returns:
         Output activations of shape [B, T, d_model].
     """
-    # BEGIN Assignment 1
-    raise NotImplementedError("Implement Assignment 1")
-    # END Assignment 1
+    # BEGIN Part 1.3
+    raise NotImplementedError("Implement Part 1.3")
+    # END Part 1.3

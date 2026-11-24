@@ -1,5 +1,3 @@
-"""Provided helpers: weight init, left-padding, roofline bounds, and HF checkpoint loader."""
-
 from __future__ import annotations
 
 from typing import Any

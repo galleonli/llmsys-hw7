@@ -1,5 +1,3 @@
-"""Assignment 5: Sampling & JIT-Compiled Batched Generation with jax.lax.scan."""
-
 from __future__ import annotations
 
 import functools
@@ -30,9 +28,9 @@ def sample_next_token(
     Returns:
         Sampled token IDs of shape [B] (int32).
     """
-    # BEGIN Assignment 5
-    raise NotImplementedError("Implement Assignment 5")
-    # END Assignment 5
+    # BEGIN Part 5.1
+    raise NotImplementedError("Implement Part 5.1")
+    # END Part 5.1
 
 
 @functools.partial(
@@ -64,6 +62,6 @@ def generate(
     Returns:
         Generated token IDs of shape [B, max_new_tokens] (int32), excluding the prompt.
     """
-    # BEGIN Assignment 5
-    raise NotImplementedError("Implement Assignment 5")
-    # END Assignment 5
+    # BEGIN Part 5.2
+    raise NotImplementedError("Implement Part 5.2")
+    # END Part 5.2

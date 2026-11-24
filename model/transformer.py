@@ -1,5 +1,3 @@
-"""Assignment 4: Transformer Block, Prefill, and Single-Step Decode."""
-
 from __future__ import annotations
 
 from typing import Any
@@ -39,9 +37,9 @@ def transformer_block(
     Returns:
         (out, new_layer_cache) where `out` has shape [B, T, d_model].
     """
-    # BEGIN Assignment 4
-    raise NotImplementedError("Implement Assignment 4")
-    # END Assignment 4
+    # BEGIN Part 4.1
+    raise NotImplementedError("Implement Part 4.1")
+    # END Part 4.1
 
 
 def prefill(
@@ -74,9 +72,9 @@ def prefill(
           0, 1, ..., L_b - 1 (pad tokens receive 0), and `next_positions[b, 0] == L_b`.
         - Support both tied (`embed_tokens.T`) and untied (`lm_head`) output projections.
     """
-    # BEGIN Assignment 4
-    raise NotImplementedError("Implement Assignment 4")
-    # END Assignment 4
+    # BEGIN Part 4.2
+    raise NotImplementedError("Implement Part 4.2")
+    # END Part 4.2
 
 
 def decode_step(
@@ -111,6 +109,6 @@ def decode_step(
         Marks column `cache_index` valid, writes single-token K/V at `cache_index`,
         and must trace only once under `@jax.jit` across consecutive decode steps.
     """
-    # BEGIN Assignment 4
-    raise NotImplementedError("Implement Assignment 4")
-    # END Assignment 4
+    # BEGIN Part 4.3
+    raise NotImplementedError("Implement Part 4.3")
+    # END Part 4.3

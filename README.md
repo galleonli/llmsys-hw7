@@ -18,34 +18,33 @@ Implementation-first homework on single-chip LLM inference in pure JAX (LLaMA-st
 ├── model/
 │   ├── __init__.py                 # Public package exports
 │   ├── config.py                   # ModelConfig (JSON loader) & LayerKVCache / ModelKVCache
-│   ├── layers.py                   # Assignment 1: rms_norm, apply_rope, swiglu_mlp
-│   ├── kv_cache.py                 # Assignment 2: init_kv_cache, update_kv_cache
-│   ├── attention.py                # Assignment 3: make_attention_mask, gqa_attention
-│   ├── transformer.py              # Assignment 4: transformer_block, prefill, decode_step
-│   ├── generate.py                 # Assignment 5: sample_next_token, generate
+│   ├── layers.py                   # Part 1 (1.1–1.3): rms_norm, apply_rope, swiglu_mlp
+│   ├── kv_cache.py                 # Part 2 (2.1–2.2): init_kv_cache, update_kv_cache
+│   ├── attention.py                # Part 3 (3.1–3.2): make_attention_mask, gqa_attention
+│   ├── transformer.py              # Part 4 (4.1–4.3): transformer_block, prefill, decode_step
+│   ├── generate.py                 # Part 5 (5.1–5.2): sample_next_token, generate
 │   └── utils.py                    # Provided helpers (init, left-pad, roofline, HF loader)
 ├── tests/
 │   ├── __init__.py
-│   └── test_inference.py           # Grading & performance test suite
+│   └── test_inference.py           # Pytest correctness & TPU speedup test suite
 ├── hw_inference.ipynb              # Student notebook (specs, illustrations, checks, grading)
 └── README.md
 ```
 
-## Assignment Overview
-| Problem | Module | Functions | Core Concepts |
+## Homework Overview
+| Part | Module | Functions | Core Concepts |
 | :--- | :--- | :--- | :--- |
-| **1** | `model/layers.py` | `rms_norm`, `apply_rope`, `swiglu_mlp` | Pure JAX ops, `float32` accumulation, rotate-half RoPE |
-| **2** | `model/kv_cache.py` | `init_kv_cache`, `update_kv_cache` | PyTree `NamedTuple` caches, static shapes, `jax.lax.dynamic_update_slice` |
-| **3** | `model/attention.py` | `make_attention_mask`, `gqa_attention` | Causal + valid-slot masking, zero-copy GQA grouping, NaN-safe masking |
-| **4** | `model/transformer.py` | `transformer_block`, `prefill`, `decode_step` | Prefill vs decode, single-trace XLA verification |
-| **5** | `model/generate.py` | `sample_next_token`, `generate` | Explicit PRNG keys, top-k sampling, `@jax.jit` + `jax.lax.scan`, left-padded batching |
+| **Part 1** (`1.1`–`1.3`) | `model/layers.py` | `rms_norm`, `apply_rope`, `swiglu_mlp` | Pure JAX ops, `float32` accumulation, rotate-half RoPE |
+| **Part 2** (`2.1`–`2.2`) | `model/kv_cache.py` | `init_kv_cache`, `update_kv_cache` | PyTree `NamedTuple` caches, static shapes, `jax.lax.dynamic_update_slice` |
+| **Part 3** (`3.1`–`3.2`) | `model/attention.py` | `make_attention_mask`, `gqa_attention` | Causal + valid-slot masking, zero-copy GQA grouping, NaN-safe masking |
+| **Part 4** (`4.1`–`4.3`) | `model/transformer.py` | `transformer_block`, `prefill`, `decode_step` | Prefill vs decode, single-trace XLA verification |
+| **Part 5** (`5.1`–`5.2`) | `model/generate.py` | `sample_next_token`, `generate` | Explicit PRNG keys, top-k sampling, `@jax.jit` + `jax.lax.scan`, left-padded batching |
 
 ## Quickstart
-Open `hw_inference.ipynb` in a **TPU v5e** runtime, implement each section inside `# BEGIN Assignment x` ... `# END Assignment x` in `model/`, and run the per-section test cells and the final grading cell:
-```python
-import model
-from tests.test_inference import run_all
-run_all(model, benchmark=True)
+Open `hw_inference.ipynb` in a **TPU v5e** runtime, implement each section inside `# BEGIN Part X.Y` ... `# END Part X.Y` in `model/`, and run the per-part test cells and the final grading cell — or run `pytest` directly:
+```bash
+pytest -v tests/test_inference.py -k part_1   # single part
+pytest -v tests/test_inference.py             # full suite (TPU v5e)
 ```
 
 ## Background References
